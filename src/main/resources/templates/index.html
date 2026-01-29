@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beanstalk Test</title>
+</head>
+<body>
+    <h1>책 목록 및 등록</h1>
+    <h2 th:text="${appName}"></h2>
+    <ul th:each="book : ${books}">
+        <li th:text="${book}"></li>
+    </ul>
+    <form th:method="post">
+        <label>
+            책 이름 : <input th:name="name">
+        </label>
+        <button>등록</button>
+    </form>
+</body>
+</html>
