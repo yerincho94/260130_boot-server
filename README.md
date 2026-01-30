@@ -77,5 +77,9 @@ docker images
 
 ```sh
 git -v
+# public 레포지토리 일때는 바로 clone해서 실행 가능
 git clone https://github.com/yerincho94/260130_boot-server.git
+
+# private 레포지토리 일때는 로그인을 해야함
+# username : 내 username , pw : 내 진짜 비번 말고 위에서 생성한 토큰을 넣어야함.
 ```
