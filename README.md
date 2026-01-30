@@ -35,7 +35,7 @@ docker push ghcr.io/<github username>/boot-server:latest
 ```sh
 # pem은 .gitignore에 포함
 chmod 400 "my-key-260130.pem"
-ssh -i "my-key-260130.pem" ubuntu@ec2-13-125-43-158.ap-northeast-2.compute.amazonaws.com
+ssh -i "my-key-260130.pem" ubuntu@ec2-13-125-197-173.ap-northeast-2.compute.amazonaws.com
 ```
 
 ### 도커 설치 및 권한 부여
@@ -82,4 +82,21 @@ git clone https://github.com/yerincho94/260130_boot-server.git
 
 # private 레포지토리 일때는 로그인을 해야함
 # username : 내 username , pw : 내 진짜 비번 말고 위에서 생성한 토큰을 넣어야함.
+```
+
+### docker compose 실행
+```sh
+cd <clone한 깃 폴더>
+# docker compose up -d -> .env가 없...
+cp .env.sample .env
+vi .env # i 누르면 편집가능, esc + :wq
+docker compose up -d
+curl localhost
+```
+
+### 외부 접속
+```sh
+curl checkip.amazonaws.com
+curl ip.me
+# 43.200.1.0
 ```
